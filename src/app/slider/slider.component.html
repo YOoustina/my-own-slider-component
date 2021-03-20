@@ -1,0 +1,28 @@
+
+ <div id="carouselExampleIndicators" class="carousel slide container" data-ride="carousel">
+  <div class="carousel-inner" >
+    <div class="carousel-item  " *ngFor="let item of items; let i=index"  [class]="(i === currentSlide) ? 'active' : ''"  >
+      <ng-templete  *ngIf="item.imgUrl">
+        <img class="d-block w-100" [src]="item.imgUrl" >
+      </ng-templete>
+      <div class="carousel-caption d-none d-md-block">
+        <h5 *ngIf="item.title">{{item.title}}</h5>
+        <p *ngIf="item.body">{{item.body}}</p>
+      </div> 
+    </div> 
+
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" (click)=prev() role="button" data-slide="prev">
+    <div class="arrow-container" >
+
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    </div>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" (click)=next() role="button" data-slide="next">
+    <div class="arrow-container" >
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </div>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
